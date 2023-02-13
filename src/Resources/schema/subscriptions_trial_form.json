@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Настройки подписки",
+  "type": "object",
+  "properties": {
+    "1" : {
+      "title": "2222",
+      "subTitle": "Выберите из вариантов.",
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  "required": [
+    "1"
+  ],
+  "additionalProperties": false,
+  "$texts": {
+
+  }
+}

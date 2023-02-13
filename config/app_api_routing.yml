@@ -1,0 +1,59 @@
+create_user:
+  path: /users
+  controller: app.controller.user:createUser
+  methods: [POST]
+
+login_user:
+  path: /users/login
+  controller: app.controller.user:loginUser
+  methods: [POST]
+
+reset_user:
+  path: /users/reset
+  controller: app.controller.reset_password:resetUser
+  methods: [POST]
+
+get_user:
+  path: /users/{userId}
+  controller: app.controller.user:getUserInfo
+  methods: [GET]
+
+update_user:
+  path: /users/{userId}
+  controller: app.controller.user:updateUser
+  methods: [PUT]
+
+get_settings:
+  path: /settings
+  controller: app.controller.settings:getSettings
+  methods: [GET]
+
+get_dishes:
+  path: /dishes
+  controller: app.controller.dish:getDishes
+  methods: [GET]
+
+set_dish_rating:
+  path: /dishes/{dishId}/rating
+  controller: app.controller.dish:setDishRating
+  methods: [POST]
+
+hide_dish_for_user:
+  path: /dishes/{dishId}/hide
+  controller: app.controller.dish:hideDishForUser
+  methods: [POST]
+
+exclude_dish_for_user_per_day:
+  path: /dishes/{dishId}/exclude-per-day
+  controller: app.controller.dish:excludeDishForUserPerDay
+  methods: [POST]
+
+set_dish_choice_for_user_per_day:
+  path: /dishes/{dishId}/set-user-choice-per-day
+  controller: app.controller.dish:setUserDishChoicePerDay
+  methods: [POST]
+
+create_payment_yookassa:
+  path: /payment/yookassa/create
+  controller: app.controller.payment:createYookassaPayment
+  methods: [POST]

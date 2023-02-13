@@ -1,0 +1,20 @@
+/.env
+/public/bundles/
+/public/uploads/
+/docker/db
+/var/
+/vendor/
+.idea
+
+/docker/cron/
+/docker/xdebug/
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###

@@ -1,0 +1,67 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    jwt_secret: SOME_SECRET
+    app.path.ingredient_images: /uploads/images/ingredient
+    app.path.dish_images: /uploads/images/dish
+    app.path.dish_step_images: /uploads/images/dish_step
+
+    yoo_kassa.id_market: 820994
+    yoo_kassa.secret_key: test_7yd0CiKYtGvyN7zkfrM0mZpnNyN1d284uG8-k2MZoxA
+    yoo_kassa.return_url: https://api.reslim.app/test_yookassa_wait
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+
+    App\MessageHandler\MailNotificationHandler:
+        tags: [messenger.message_handler]
+
+
+    app.controller.user:
+        class: App\Controller\Api\UserController
+        public: true
+
+    app.controller.settings:
+        class: App\Controller\Api\SettingsController
+        public: true
+
+    app.controller.reset_password:
+        class: App\Controller\Api\ResetPasswordController
+        public: true
+
+    app.controller.dish:
+        class: App\Controller\Api\DishController
+        public: true
+
+    app.controller.payment:
+        class: App\Controller\Api\PaymentController
+        public: true
+
+    app.controller.payment_webhook:
+        class: App\Controller\Api\PaymentWebhookController
+        public: true
+
+    app.exception_listener:
+        class: App\HttpKernel\EventListener\ApiExceptionListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException, priority: 128 }

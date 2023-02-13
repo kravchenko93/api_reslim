@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Вопросы для теста пользователя",
+  "type": "object",
+  "properties": {
+    "1" : {
+      "title": "Какого Вы пола?",
+      "subTitle": "Выберите из вариантов.",
+      "type": "string",
+      "enum": [
+        "Женщина",
+        "Мужчина"
+      ],
+      "$optionsImages": {
+        "Женщина": "https://api.reslim.app/images/user_test/1_1.png",
+        "Мужчина": "https://api.reslim.app/images/user_test/1_2.png"
+      }
+    },
+    "2" : {
+      "title": "Какой формы ваша фигура?",
+      "subTitle": "Выберите свой тип фигуры.",
+      "type": "string",
+      "enum": [
+        "Прямоугольная",
+        "Песочные часы",
+        "Груша",
+        "Овал"
+      ],
+      "$optionsImages": {
+        "Прямоугольная": "https://api.reslim.app/images/user_test/2_1.png",
+        "Песочные часы": "https://api.reslim.app/images/user_test/2_2.png",
+        "Груша": "https://api.reslim.app/images/user_test/2_3.png",
+        "Овал": "https://api.reslim.app/images/user_test/2_4.png"
+      }
+    },
+    "3" : {
+      "title": "Какой у вас образ жизни?",
+      "subTitle": "Выберите подходящий вариант.",
+      "type": "string",
+      "enum": [
+        "Сидячий",
+        "Активный",
+        "Физический труд",
+        "Спокойный"
+      ],
+      "$optionsImages": {
+        "Сидячий": "https://api.reslim.app/images/user_test/3_1.png",
+        "Активный": "https://api.reslim.app/images/user_test/3_2.png",
+        "Физический труд": "https://api.reslim.app/images/user_test/3_3.png",
+        "Спокойный": "https://api.reslim.app/images/user_test/3_4.png"
+      },
+      "$optionsDescription": {
+        "Сидячий": "Офисная работа",
+        "Активный": "Частые тренировки",
+        "Физический труд": "Часто на ногах",
+        "Спокойный": "Большее время дома"
+      }
+    },
+    "4" : {
+      "title": "Какие у вас вредные привычки?",
+      "subTitle": "Выберите подходящий вариант.",
+      "type": "string",
+      "enum": [
+        "Не высыпаюсь",
+        "Люблю сладкое",
+        "Пью много сладкой газировки",
+        "Ем много соленой еды",
+        "Ем фаст-фуд",
+        "Ничего из этого"
+      ]
+    },
+    "5" : {
+      "title": "Насколько вы физически активны?",
+      "subTitle": "Выберите подходящий вариант.",
+      "type": "string",
+      "enum": [
+        "Часто занимаюсь спортом",
+        "Хожу в зал 1-2 раза в неделю",
+        "Занимаюсь более 3х раз в неделю",
+        "Не занимаюсь спортом"
+      ],
+      "$optionsImages": {
+        "Часто занимаюсь спортом": "https://api.reslim.app/images/user_test/5_1.png",
+        "Хожу в зал 1-2 раза в неделю": "https://api.reslim.app/images/user_test/5_2.png",
+        "Занимаюсь более 3х раз в неделю": "https://api.reslim.app/images/user_test/5_3.png",
+        "Не занимаюсь спортом": "https://api.reslim.app/images/user_test/5_4.png"
+      }
+    },
+    "6" : {
+      "title": "Как вы ощущаете себя в течение дня?",
+      "subTitle": "Выберите подходящий вариант.",
+      "type": "string",
+      "enum": [
+        "Чувствую бодрость в течение дня",
+        "Чувствую усталость с утра",
+        "Чувствую слабость после обеда"
+      ]
+    },
+    "7" : {
+      "title": "Испытываете дискомфорт в животе в течение дня?",
+      "subTitle": "Выберите подходящий вариант.",
+      "type": "string",
+      "enum": [
+        "Да",
+        "Нет"
+      ]
+    }
+  },
+  "required": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "additionalProperties": false,
+  "$texts": {
+
+  }
+}

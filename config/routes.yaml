@@ -1,0 +1,18 @@
+app_api_methods:
+    resource: 'app_api_routing.yml'
+    prefix:   '/api'
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui}
+
+yookassa_webhook:
+    path: /webhook/yookassa
+    controller: app.controller.payment_webhook:webhookYookassa
+    methods: [POST]
+
+test_yookassa_wait:
+    path: /test_yookassa_wait
+    controller: app.controller.payment_webhook:testYookassaWait
+    methods: [GET]
